@@ -1,0 +1,81 @@
+/* Background and fonts */
+body {
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h2 {
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  font-weight: 600;
+}
+
+/* Table styling */
+.table {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+/* Buttons */
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+/* Total text */
+#total {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+/* Responsive padding */
+.container {
+  padding-bottom: 40px;
+}
