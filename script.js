@@ -1,5 +1,8 @@
 let editingId = null; // Track current editing record
 
+// ✅ Replace with your deployed backend URL
+const BASE_URL = "https://your-render-backend-url.onrender.com/expenses"; // ⬅️ Replace this!
+
 // When the form is submitted
 document.getElementById("expenseForm").addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent page from reloading
@@ -14,9 +17,7 @@ document.getElementById("expenseForm").addEventListener("submit", function (e) {
   const expense = { title, amount, category, date, description };
 
   const method = editingId ? "PUT" : "POST";
-  const url = editingId
-    ? `http://localhost:8080/expenses/${editingId}`
-    : "http://localhost:8080/expenses";
+  const url = editingId ? `${BASE_URL}/${editingId}` : BASE_URL;
 
   fetch(url, {
     method: method,
@@ -38,7 +39,7 @@ document.getElementById("expenseForm").addEventListener("submit", function (e) {
 
 // Load all expenses from backend
 function loadExpenses() {
-  fetch("http://localhost:8080/expenses")
+  fetch(BASE_URL)
     .then(response => response.json())
     .then(data => {
       const table = document.querySelector("#expenseTable tbody");
@@ -71,7 +72,7 @@ function loadExpenses() {
 // Delete an expense by ID
 function deleteExpense(id) {
   if (confirm("Are you sure you want to delete this expense?")) {
-    fetch(`http://localhost:8080/expenses/${id}`, {
+    fetch(`${BASE_URL}/${id}`, {
       method: "DELETE"
     })
       .then(() => {
@@ -87,7 +88,7 @@ function deleteExpense(id) {
 
 // Edit an expense by ID
 function editExpense(id) {
-  fetch(`http://localhost:8080/expenses/${id}`)
+  fetch(`${BASE_URL}/${id}`)
     .then(res => res.json())
     .then(exp => {
       document.getElementById("title").value = exp.title;
