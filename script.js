@@ -1,7 +1,7 @@
 let editingId = null; // Track current editing record
 
-// ✅ Replace with your deployed backend URL
 const BASE_URL = "https://smart-expense-tracker-1-mp02.onrender.com/expenses";
+
 
 // When the form is submitted
 document.getElementById("expenseForm").addEventListener("submit", function (e) {
